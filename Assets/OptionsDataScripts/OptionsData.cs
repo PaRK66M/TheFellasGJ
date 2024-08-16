@@ -5,14 +5,16 @@ using UnityEngine;
 public class OptionsData : MonoBehaviour
 {
     // Start is called before the first frame update
+
+    float volume;
     void Start()
     {
-        
+        GetAllOptionsData();
     }
 
     // Update is called once per frame
-    void Update()
+    void GetAllOptionsData()
     {
-        Debug.Log(PlayerPrefs.GetFloat("volume"));
+        volume = PlayerPrefs.GetFloat("volume");
     }
 }
