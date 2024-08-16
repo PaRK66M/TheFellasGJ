@@ -9,12 +9,14 @@ public class flammable : MonoBehaviour
     [SerializeField]
     private bool isOnFire = false;
     private GameObject PlayerObj;
+    private GameObject TrackerObj;
 
 
     // Start is called before the first frame update
     void Start()
     {
         PlayerObj = GameObject.Find("Player");
+        TrackerObj = GameObject.Find("Tracker");
 
     }
 
@@ -26,6 +28,7 @@ public class flammable : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        
         if (collision.gameObject.name == "Player")
         {
             if (!isOnFire)
@@ -35,8 +38,16 @@ public class flammable : MonoBehaviour
                     isOnFire = true;
                     int objectLayer = LayerMask.NameToLayer("OnFire");
                     gameObject.layer = objectLayer;
+                    TrackerObj.GetComponent<TrackerScript>().CountUp();
+                    Debug.Log("Im on FIREEE!");
                 }
             }
         }
+    }
+    public void ResetObj()
+    {
+        isOnFire = false;
+        int objectLayer = LayerMask.NameToLayer("NotOnFire");
+        gameObject.layer = objectLayer;
     }
 }
