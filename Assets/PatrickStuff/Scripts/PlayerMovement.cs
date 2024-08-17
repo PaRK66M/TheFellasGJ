@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
 
     //SpriteMap
     [SerializeField] private Tilemap groundMap;
+    [SerializeField] private Tilemap ashMap;
     [SerializeField] private Tile flameTile;
     [SerializeField] private Transform frontStep;
     private Vector3Int lastTilePosition;
@@ -59,7 +60,7 @@ public class PlayerMovement : MonoBehaviour
         verDecRate = (50 * verticalSpeed) / verticalSpeed;
 
         canMove = true;
-        canClimb = true;
+        canClimb = false;
 
         EnableInput();
     }
@@ -67,7 +68,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(canClimb);
+        
     }
 
     private void FixedUpdate()
@@ -80,8 +81,9 @@ public class PlayerMovement : MonoBehaviour
             if(verticalForce != 0)
             {
                 rb.gravityScale = 0;
+                rb.velocity = new Vector2(rb.velocity.x, 0.0f);
 
-                rb.MovePosition(new Vector2(rb.position.x, rb.position.y + verticalForce));
+                rb.position = new Vector2(rb.position.x, rb.position.y + verticalForce);
             }
         }
 
@@ -107,9 +109,13 @@ public class PlayerMovement : MonoBehaviour
 
         if (!canMove)
         {
+            Debug.Log("Can't move");
+
             horizontalForce = 0.0f;
             rb.velocity = new Vector2(0.0f, rb.velocity.y);
         }
+
+        
 
         rb.AddForce(horizontalForce * Vector2.right, ForceMode2D.Force);
 
@@ -129,12 +135,12 @@ public class PlayerMovement : MonoBehaviour
 
                 if (groundMap.HasTile(currentTile))
                 {
-                    if (groundMap.GetTile(currentTile) != flameTile)
+                    if (ashMap.GetTile(currentTile) != flameTile)
                     {
 
                         if (ReduceSize())
                         {
-                            groundMap.SetTile(currentTile, flameTile);
+                            ashMap.SetTile(currentTile, flameTile);
                         }
                         return;
                     }
