@@ -10,6 +10,10 @@ public class PauseMenu : MonoBehaviour
     private GameObject PauseMenuUI;
     [SerializeField]
     private GameObject OptionMenuUI;
+    [SerializeField]
+    private GameObject VictoryScreenUI;
+    [SerializeField]
+    private GameObject TrackerObj;
 
     // Update is called once per frame
     void Update()
@@ -24,6 +28,10 @@ public class PauseMenu : MonoBehaviour
             {
                 Pause();
             }
+        }
+        if (TrackerObj.GetComponent<TrackerScript>().totalFlammableObj - TrackerObj.GetComponent<TrackerScript>().onFireObj <= 0)
+        {
+            Victory();
         }
     }
 
@@ -52,6 +60,11 @@ public class PauseMenu : MonoBehaviour
     {
         PauseMenuUI.SetActive(true);
         OptionMenuUI.SetActive(false);
+    }
+
+    void Victory()
+    {
+        VictoryScreenUI.SetActive(true);
     }
     //load menu
     //quit game
