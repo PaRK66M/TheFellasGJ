@@ -14,8 +14,13 @@ public class OptionsData : MonoBehaviour
     }
 
     // Update is called once per frame
-    void GetAllOptionsData()
+    public void GetAllOptionsData()
     {
         volume = PlayerPrefs.GetFloat("volume");
+    }
+
+    public void SetAllOptionsData()
+    {
+        PlayerPrefs.SetFloat("volume", volume);
     }
 }
