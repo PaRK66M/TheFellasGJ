@@ -5,8 +5,8 @@ using UnityEngine;
 public class OptionsData : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField]
-    private float volume;
+
+    public float volume;
 
     void Start()
     {
@@ -17,5 +17,10 @@ public class OptionsData : MonoBehaviour
     void GetAllOptionsData()
     {
         volume = PlayerPrefs.GetFloat("volume");
+    }
+
+    void SetVolume ()
+    {
+
     }
 }

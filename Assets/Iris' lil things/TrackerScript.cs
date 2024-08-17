@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TrackerScript : MonoBehaviour
 {
@@ -11,10 +12,14 @@ public class TrackerScript : MonoBehaviour
 
     public GameObject[] flammableObj;
 
+    public Slider sliderFlame;
+
     // Start is called before the first frame update
     void Start()
     {
         totalFlammableObj = flammableObj.Length;
+        sliderFlame.maxValue = totalFlammableObj;
+        sliderFlame.value = 0;
     }
 
     // Update is called once per frame
@@ -26,6 +31,7 @@ public class TrackerScript : MonoBehaviour
     public void CountUp()
     {
         onFireObj++;
+        sliderFlame.value = onFireObj;
         if (totalFlammableObj <= onFireObj)
         {
             Debug.Log("Level Complete!");
