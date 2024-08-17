@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
 
     //Player
     public float minimumSize;
+    public float enlargeScale;
 
     //SpriteMap
     [SerializeField] private Tilemap groundMap;
@@ -160,6 +161,15 @@ public class PlayerMovement : MonoBehaviour
 
         canMove = false;
         return false;
+    }
+
+    public void EnlargeSize()
+    {
+        Vector3 newSize = new Vector3(transform.localScale.x > 0.0f ? transform.localScale.x + enlargeScale : transform.localScale.x - enlargeScale,
+                                      transform.localScale.y > 0.0f ? transform.localScale.y + enlargeScale : transform.localScale.y - enlargeScale,
+                                      transform.localScale.z);
+
+        transform.localScale = newSize;
     }
 
     #region Input
