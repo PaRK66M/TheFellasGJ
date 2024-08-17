@@ -31,11 +31,13 @@ public class flammable : MonoBehaviour
         
         if (collision.gameObject.name == "Player")
         {
+            Debug.Log("Collision w player");
             if (!isOnFire)
             {
                 if (PlayerObj.transform.localScale.y >= transform.localScale.y)
                 {
                     isOnFire = true;
+                    Debug.Log("is on fire true");
                     int objectLayer = LayerMask.NameToLayer("OnFire");
                     gameObject.layer = objectLayer;
                     TrackerObj.GetComponent<TrackerScript>().CountUp();
