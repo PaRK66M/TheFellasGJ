@@ -5,8 +5,9 @@ using UnityEngine;
 public class OptionsData : MonoBehaviour
 {
     // Start is called before the first frame update
+    [SerializeField]
+    private float volume;
 
-    float volume;
     void Start()
     {
         GetAllOptionsData();
