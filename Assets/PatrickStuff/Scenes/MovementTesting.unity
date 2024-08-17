@@ -666,12 +666,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5143c6953fc8c304296bf7166b876db8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minimumSize: 0
+  minimumSize: 0.8
   groundMap: {fileID: 835702759}
   flameTile: {fileID: 11400000, guid: 4f59f14955baaec4092a206666d0245d, type: 2}
   frontStep: {fileID: 2050840095}
   speed: 10
-  movementScaleDecrease: 0
+  movementScaleDecrease: 0.8
 --- !u!212 &930218405
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -733,7 +733,7 @@ Transform:
   m_GameObject: {fileID: 930218403}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.63, y: -2.443, z: 0}
+  m_LocalPosition: {x: -4.245, y: 0.36, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

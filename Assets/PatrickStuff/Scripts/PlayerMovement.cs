@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Tilemap groundMap;
     [SerializeField] private Tile flameTile;
     [SerializeField] private Transform frontStep;
+    private Vector3Int lastTilePosition;
 
     //Movement
     [SerializeField]
@@ -26,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
     private float horizontalMovementInput;
     [SerializeField] 
     private float movementScaleDecrease;
+    private bool canMove;
 
     private float accelerationAmount;
     private float decelerationAmount;
@@ -45,6 +47,8 @@ public class PlayerMovement : MonoBehaviour
         accelerationAmount = (50 * speed) / speed;
         decelerationAmount = (50 * speed) / speed;
 
+        canMove = true;
+
         EnableInput();
     }
 
@@ -57,6 +61,15 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
 
+        if (horizontalMovementInput > 0.0f)
+        {
+            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+        }
+        else if (horizontalMovementInput < 0.0f)
+        {
+            transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+        }
+
         float targetSpeed = horizontalMovementInput * speed;
 
         float accelRate = (Mathf.Abs(targetSpeed) > 0.01f) ? accelerationAmount : decelerationAmount;
@@ -65,24 +78,62 @@ public class PlayerMovement : MonoBehaviour
 
         float movement = speedDifference * accelRate;
 
-        rb.AddForce(movement * Vector2.right, ForceMode2D.Force);
+        CheckFire(movement);
 
-        if (horizontalMovementInput > 0.0f)
+        if (canMove)
         {
-            transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, transform.localScale.z);
+            rb.AddForce(movement * Vector2.right, ForceMode2D.Force);
         }
-        else if (horizontalMovementInput < 0.0f)
+        else
         {
-            transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+            rb.velocity = new Vector2(0.0f, rb.velocity.y);
         }
 
+    }
+
+    private void CheckFire(float movement)
+    {
         if (movement != 0.0f)
         {
-            Vector3Int temp = new Vector3Int(Mathf.FloorToInt(frontStep.position.x), Mathf.FloorToInt(frontStep.position.y - 0.1f), 0);
-            gizmoBox = temp;
-            groundMap.SetTile(temp, flameTile);
+            Vector3Int currentTile = new Vector3Int(Mathf.FloorToInt(frontStep.position.x), Mathf.FloorToInt(frontStep.position.y - 0.1f), 0);
+
+            gizmoBox = currentTile; //Gizmo Debug
+
+            if(currentTile != lastTilePosition)
+            {
+                lastTilePosition = currentTile;
+                Debug.Log(lastTilePosition);
+                Debug.Log(frontStep.position);
+
+                if (groundMap.HasTile(currentTile))
+                {
+                    if (groundMap.GetTile(currentTile) != flameTile)
+                    {
+                        if (ReduceSize())
+                        {
+                            groundMap.SetTile(currentTile, flameTile);
+                        }
+
+                        return;
+                    }
+
+                    canMove = true;
+                }
+            }
+        }
+    }
+
+    private bool ReduceSize()
+    {
+        Vector3 newSize = transform.localScale * movementScaleDecrease;
+        if (newSize.x >= minimumSize)
+        {
+            transform.localScale = newSize;
+            return true;
         }
 
+        canMove = false;
+        return false;
     }
 
     #region Input
