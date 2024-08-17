@@ -1,5 +1,6 @@
 
 using System.Collections;
+using TMPro;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -10,6 +11,7 @@ public class LevelLoading : MonoBehaviour
     public GameObject loadingScreen;
     public GameObject menuScreen;
     public Slider slider;
+    public TMP_Text progressText;
     public void LoadLevel(string name)
     {
         StartCoroutine(LoadAsync(name));
@@ -25,6 +27,7 @@ public class LevelLoading : MonoBehaviour
         {
             float progress = Mathf.Clamp01(operation.progress/0.9f);
             slider.value = progress;
+            progressText.text = progress*100f + "%";
 
             yield return null;
         }
