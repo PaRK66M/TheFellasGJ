@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 20c988cfede4ca9458fda675b92e2ab6
+guid: af2dbec9bb496d946a2bfbc9d4bf9dbb
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -93,11 +93,24 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ss_body_top_0
+      name: ss_body_bottom_2_0
       rect:
         serializedVersion: 2
         x: 0
@@ -111,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa34864b4becf87449a8d74e13854bbe
-      internalID: -352246221
+      spriteID: 514443d18fa81fb4989bbbebb60f0657
+      internalID: -666788921
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ss_body_top_1
+      name: ss_body_bottom_2_1
       rect:
         serializedVersion: 2
         x: 258
@@ -132,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: abe065348661e2847ac0d1c60f527b17
-      internalID: -278517247
+      spriteID: 77078c70b92229b4eba9e860c0a69a6e
+      internalID: 469926042
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ss_body_top_2
+      name: ss_body_bottom_2_2
       rect:
         serializedVersion: 2
         x: 516
@@ -153,14 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6e4642570c742a64c915163f2dfad271
-      internalID: -332004272
+      spriteID: 53b4fd0c0310d1b46a64ff4ada2ac80a
+      internalID: -6529278
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ss_body_top_3
+      name: ss_body_bottom_2_3
       rect:
         serializedVersion: 2
         x: 774
@@ -174,8 +187,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9efe5d0e891251d48ac81aaa4ffa41c2
-      internalID: 1707133241
+      spriteID: 721f1328339a71848aee65a0a2101e74
+      internalID: -1328620502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_body_bottom_2_4
+      rect:
+        serializedVersion: 2
+        x: 1032
+        y: 2
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18f658d5a81c18b4c81053ca2cdd7bcd
+      internalID: 1809271465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_body_bottom_2_5
+      rect:
+        serializedVersion: 2
+        x: 1290
+        y: 2
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 661e195b1f932d94a9b9dec74c5f9bdb
+      internalID: 608763121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_body_bottom_2_6
+      rect:
+        serializedVersion: 2
+        x: 1548
+        y: 2
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffe645f3c1a00794ebd9c542e22a572f
+      internalID: 1202889559
       vertices: []
       indices: 
       edges: []
@@ -191,10 +267,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ss_body_top_0: -352246221
-      ss_body_top_1: -278517247
-      ss_body_top_2: -332004272
-      ss_body_top_3: 1707133241
+      ss_body_bottom_2_0: -666788921
+      ss_body_bottom_2_1: 469926042
+      ss_body_bottom_2_2: -6529278
+      ss_body_bottom_2_3: -1328620502
+      ss_body_bottom_2_4: 1809271465
+      ss_body_bottom_2_5: 608763121
+      ss_body_bottom_2_6: 1202889559
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
