@@ -16,6 +16,12 @@ public class PauseMenu : MonoBehaviour
     [SerializeField]
     private GameObject TrackerObj;
 
+    [SerializeField]
+    private GameObject GameSceneStuff;
+
+    [SerializeField]
+    private GameObject LoadingScreen;
+
     // Update is called once per frame
     void Update()
     {
@@ -70,7 +76,10 @@ public class PauseMenu : MonoBehaviour
     
     public void LoadMenu()
     {
-        SceneManager.LoadScene("MenuScene");
+        LoadingScreen.SetActive(true);
+        //SceneManager.LoadScene("MenuScene");
+        LoadingScreen.GetComponent<LevelLoading>().LoadLevel("MenuScene");
+        GameSceneStuff.SetActive(false);
     }
     //quit game
 }
