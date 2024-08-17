@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -66,6 +67,10 @@ public class PauseMenu : MonoBehaviour
     {
         VictoryScreenUI.SetActive(true);
     }
-    //load menu
+    
+    public void LoadMenu()
+    {
+        SceneManager.LoadScene("MenuScene");
+    }
     //quit game
 }
