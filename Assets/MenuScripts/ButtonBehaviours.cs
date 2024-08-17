@@ -1,5 +1,6 @@
 using System.Collections;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -7,43 +8,30 @@ using UnityEngine.UI;
 
 public class ButtonBehaviours : MonoBehaviour
 {
-    [SerializeField] string gameSceneName;
+    //Initialise references to objects scene objects
     public GameObject mainMenu;
     public GameObject optionsMenu;
     public GameObject loadingScreen;
-    public Slider slider;
-    public TMP_Text progressText;
 
+    //options menu activation (can only occur from menu scene so that is the only one we need to toggle)
     public void ToOptionsMenu()
     {
         mainMenu.SetActive(false);
         optionsMenu.SetActive(true);
     }
 
+    //main menu activation (can only occur from options scene so we only toggle options)
     public void ToMainMenu()
     {
         optionsMenu.SetActive(false);
         mainMenu.SetActive(true);
     }
 
+    //load level using loading screen scripting
     public void LoadLevel(string name)
     {
-        StartCoroutine(LoadAsync(name));
-        
-    }
-    
-    IEnumerator LoadAsync(string name)
-    {
-        AsyncOperation operation = SceneManager.LoadSceneAsync(name);
         loadingScreen.SetActive(true);
         mainMenu.SetActive(false);
-        while (!operation.isDone)
-        {
-            float progress = Mathf.Clamp01(operation.progress/0.9f);
-            slider.value = progress;
-            progressText.text = progress*100f + "%";
-
-            yield return null;
-        }
+        loadingScreen.GetComponent<LevelLoading>().LoadLevel(name);
     }
 }

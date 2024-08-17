@@ -549,6 +549,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 419957007}
+  - component: {fileID: 419957008}
   m_Layer: 0
   m_Name: LoadingScreen
   m_TagString: Untagged
@@ -572,6 +573,22 @@ Transform:
   - {fileID: 75340399}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &419957008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 419957006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49eaf23890ed4cd45bc7e8d41c337854, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loadingScreen: {fileID: 419957006}
+  menuScreen: {fileID: 199077216}
+  slider: {fileID: 1679174478}
+  progressText: {fileID: 231751085}
 --- !u!1 &527820792
 GameObject:
   m_ObjectHideFlags: 0
@@ -1970,12 +1987,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3835e258ea4f6d14e9528aee80d2dad5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameSceneName: GameScene
   mainMenu: {fileID: 199077216}
   optionsMenu: {fileID: 1361607126}
   loadingScreen: {fileID: 419957006}
-  slider: {fileID: 1679174478}
-  progressText: {fileID: 231751085}
 --- !u!1 &1951927534
 GameObject:
   m_ObjectHideFlags: 0
