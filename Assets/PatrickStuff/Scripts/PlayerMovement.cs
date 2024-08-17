@@ -24,13 +24,20 @@ public class PlayerMovement : MonoBehaviour
     //Movement
     [SerializeField]
     private float speed;
+    [SerializeField]
+    private float verticalSpeed;
     private float horizontalMovementInput;
+    private float verticalMovementInput;
     [SerializeField] 
     private float movementScaleDecrease;
     private bool canMove;
+    private bool canClimb;
 
-    private float accelerationAmount;
-    private float decelerationAmount;
+    private float horAccRate;
+    private float horDecRate;
+
+    private float verAccRate;
+    private float verDecRate;
 
     //Debug
     private Vector3 gizmoBox = Vector3.zero;
@@ -44,10 +51,14 @@ public class PlayerMovement : MonoBehaviour
 
         horizontalMovementInput = 0.0f;
 
-        accelerationAmount = (50 * speed) / speed;
-        decelerationAmount = (50 * speed) / speed;
+        horAccRate = (50 * speed) / speed;
+        horDecRate = (50 * speed) / speed;
+
+        verAccRate = (50 * verticalSpeed) / verticalSpeed;
+        verDecRate = (50 * verticalSpeed) / verticalSpeed;
 
         canMove = true;
+        canClimb = true;
 
         EnableInput();
     }
@@ -55,12 +66,25 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        Debug.Log(canClimb);
     }
 
     private void FixedUpdate()
     {
 
+        //Vertical
+        if (canClimb)
+        {
+            float verticalForce = verticalMovementInput * verticalSpeed * Time.fixedDeltaTime;
+            if(verticalForce != 0)
+            {
+                rb.gravityScale = 0;
+
+                rb.MovePosition(new Vector2(rb.position.x, rb.position.y + verticalForce));
+            }
+        }
+
+        //Horizontal
         if (horizontalMovementInput > 0.0f)
         {
             transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
@@ -72,22 +96,21 @@ public class PlayerMovement : MonoBehaviour
 
         float targetSpeed = horizontalMovementInput * speed;
 
-        float accelRate = (Mathf.Abs(targetSpeed) > 0.01f) ? accelerationAmount : decelerationAmount;
+        float accelRate = (Mathf.Abs(targetSpeed) > 0.01f) ? horAccRate : horDecRate;
 
         float speedDifference = targetSpeed - rb.velocity.x;
 
-        float movement = speedDifference * accelRate;
+        float horizontalForce = speedDifference * accelRate;
 
-        CheckFire(movement);
+        CheckFire(horizontalForce);
 
-        if (canMove)
+        if (!canMove)
         {
-            rb.AddForce(movement * Vector2.right, ForceMode2D.Force);
-        }
-        else
-        {
+            horizontalForce = 0.0f;
             rb.velocity = new Vector2(0.0f, rb.velocity.y);
         }
+
+        rb.AddForce(horizontalForce * Vector2.right, ForceMode2D.Force);
 
     }
 
@@ -102,18 +125,16 @@ public class PlayerMovement : MonoBehaviour
             if(currentTile != lastTilePosition)
             {
                 lastTilePosition = currentTile;
-                Debug.Log(lastTilePosition);
-                Debug.Log(frontStep.position);
 
                 if (groundMap.HasTile(currentTile))
                 {
                     if (groundMap.GetTile(currentTile) != flameTile)
                     {
+
                         if (ReduceSize())
                         {
                             groundMap.SetTile(currentTile, flameTile);
                         }
-
                         return;
                     }
 
@@ -125,10 +146,15 @@ public class PlayerMovement : MonoBehaviour
 
     private bool ReduceSize()
     {
-        Vector3 newSize = transform.localScale * movementScaleDecrease;
-        if (newSize.x >= minimumSize)
+        Vector3 newSize = new Vector3 (transform.localScale.x > 0.0f ? transform.localScale.x - movementScaleDecrease : transform.localScale.x + movementScaleDecrease, 
+                                       transform.localScale.y > 0.0f ? transform.localScale.y - movementScaleDecrease : transform.localScale.y + movementScaleDecrease, 
+                                       transform.localScale.z);
+
+
+        if (Mathf.Abs(newSize.x) >= minimumSize)
         {
             transform.localScale = newSize;
+            transform.position = new Vector3(transform.position.x, transform.position.y - movementScaleDecrease / 2, transform.position.z);
             return true;
         }
 
@@ -142,12 +168,18 @@ public class PlayerMovement : MonoBehaviour
         playerInputSystem.Enable();
         playerInputSystem.PlayerMap.HorizontalMovement.performed += OnHorizontalMovementPerformed;
         playerInputSystem.PlayerMap.HorizontalMovement.canceled += OnHorizontalMovementCancelled;
+        playerInputSystem.PlayerMap.VerticalMovement.performed += OnVerticalMovementPerformed;
+        playerInputSystem.PlayerMap.VerticalMovement.canceled += OnVerticalMovementCancelled;
 
     }
 
     private void DisableInput()
     {
         playerInputSystem.Disable();
+        playerInputSystem.PlayerMap.HorizontalMovement.performed -= OnHorizontalMovementPerformed;
+        playerInputSystem.PlayerMap.HorizontalMovement.canceled -= OnHorizontalMovementCancelled;
+        playerInputSystem.PlayerMap.VerticalMovement.performed -= OnVerticalMovementPerformed;
+        playerInputSystem.PlayerMap.VerticalMovement.canceled -= OnVerticalMovementCancelled;
     }
 
     private void OnHorizontalMovementPerformed(InputAction.CallbackContext direction)
@@ -159,6 +191,30 @@ public class PlayerMovement : MonoBehaviour
     {
         horizontalMovementInput = 0.0f;
     }
+    private void OnVerticalMovementPerformed(InputAction.CallbackContext direction)
+    {
+        verticalMovementInput = direction.ReadValue<float>();
+    }
+
+    private void OnVerticalMovementCancelled(InputAction.CallbackContext direction)
+    {
+        verticalMovementInput = 0.0f;
+    }
+    #endregion
+
+    #region Collisions
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        canClimb = true;
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        canClimb = false;
+        rb.gravityScale = 1.0f;
+    }
+
     #endregion
 
     #region Gizmos
