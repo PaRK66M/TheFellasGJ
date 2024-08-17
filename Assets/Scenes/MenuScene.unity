@@ -210,7 +210,7 @@ Canvas:
   m_GameObject: {fileID: 75340398}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 1633921973}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -585,8 +585,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49eaf23890ed4cd45bc7e8d41c337854, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadingScreen: {fileID: 419957006}
-  menuScreen: {fileID: 199077216}
   slider: {fileID: 1679174478}
   progressText: {fileID: 231751085}
 --- !u!1 &527820792
@@ -865,7 +863,7 @@ Canvas:
   m_GameObject: {fileID: 565239053}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 1633921973}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -2391,7 +2389,7 @@ Canvas:
   m_GameObject: {fileID: 2084521357}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 1633921973}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
