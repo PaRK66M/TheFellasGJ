@@ -53,6 +53,8 @@ public class flammable : MonoBehaviour
                     gameObject.layer = objectLayer;
                     TrackerObj.GetComponent<TrackerScript>().CountUp();
                     Debug.Log("Im on FIREEE!");
+
+                    collision.gameObject.GetComponent<PlayerMovement>().EnlargeSize();
                 }
             }
         }
