@@ -22,6 +22,10 @@ public class PauseMenu : MonoBehaviour
     [SerializeField]
     private GameObject LoadingScreen;
 
+    void Start()
+    {
+        Resume();
+    }
     // Update is called once per frame
     void Update()
     {
