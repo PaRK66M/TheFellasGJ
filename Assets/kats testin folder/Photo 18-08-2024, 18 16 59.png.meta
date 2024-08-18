@@ -1,0 +1,1016 @@
+fileFormatVersion: 2
+guid: 067d15364078cce448fd20104153f7db
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Photo 18-08-2024, 18 16 59_0
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 1792
+        width: 200
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f61da42ada1c5943a8c8156feaf2506
+      internalID: 541889773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Photo 18-08-2024, 18 16 59_1
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 1796
+        width: 126
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 555442a4512881941a4e4db8203b050f
+      internalID: 114981843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Photo 18-08-2024, 18 16 59_2
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 1794
+        width: 208
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5bca1e1b8eb3ef4fb7eabb6b7b26252
+      internalID: 1207367333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Photo 18-08-2024, 18 16 59_3
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 1775
+        width: 200
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 376dcf39adbae304a8698c4a4317d89e
+      internalID: 1700153459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Photo 18-08-2024, 18 16 59_4
+      rect:
+        serializedVersion: 2
+        x: 998
+        y: 1765
+        width: 197
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7ce8fd9c7b85e34e9fd14f93333b372
+      internalID: -1134532229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Photo 18-08-2024, 18 16 59_5
+      rect:
+        serializedVersion: 2
+        x: 1209
+        y: 1778
+        width: 153
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c41565386d90c345979ccc0cccada99
+      internalID: -671182168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Photo 18-08-2024, 18 16 59_6
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 1754
+        width: 160
+        height: 266
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f57f74a84a455f4fad2b997e8e254f0
+      internalID: 2140025164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Photo 18-08-2024, 18 16 59_7
+      rect:
+        serializedVersion: 2
+        x: 1651
+        y: 1757
+        width: 185
+        height: 271
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3246a3d2742eaa7438d4b55e84d43cad
+      internalID: -2017132177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Photo 18-08-2024, 18 16 59_8
+      rect:
+        serializedVersion: 2
+        x: 1876
+        y: 1817
+        width: 112
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4910a6ae9e285784097d468cd4c1f002
+      internalID: 1036566280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Photo 18-08-2024, 18 16 59_9
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 1493
+        width: 254
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 730d812d3e13d8c44b2cfdab95d51a11
+      internalID: -1539341739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Photo 18-08-2024, 18 16 59_10
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 1480
+        width: 179
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bdf79157fa6adc4ab2047328dd6f3d7
+      internalID: -89331840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Photo 18-08-2024, 18 16 59_11
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 1477
+        width: 128
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d316f6ee4951104fb1c8efd13f39dcb
+      internalID: -313155443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Photo 18-08-2024, 18 16 59_12
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 1476
+        width: 191
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e594c2c0e1c2aba49938aa87c1fc836e
+      internalID: -1088953743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Photo 18-08-2024, 18 16 59_13
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 1473
+        width: 178
+        height: 217
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60ed1cc76b2d071458861742f85f5f6b
+      internalID: 1668349046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Photo 18-08-2024, 18 16 59_14
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 1545
+        width: 131
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17642f3a58724e24a90c19ead6372541
+      internalID: -1105199945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Photo 18-08-2024, 18 16 59_15
+      rect:
+        serializedVersion: 2
+        x: 1188
+        y: 1419
+        width: 238
+        height: 276
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6cf2ca1d77399d46ad9557cd3910218
+      internalID: 1201724513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Photo 18-08-2024, 18 16 59_16
+      rect:
+        serializedVersion: 2
+        x: 1435
+        y: 1509
+        width: 115
+        height: 197
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 700a45e0c63a6d54b945fe783ca70065
+      internalID: -1347941677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Photo 18-08-2024, 18 16 59_17
+      rect:
+        serializedVersion: 2
+        x: 1542
+        y: 1417
+        width: 210
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bdb7377363211143a3893f6eaab47cd
+      internalID: -1218002302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Photo 18-08-2024, 18 16 59_18
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 1407
+        width: 170
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00e4f491260eaa845b1c067e3a504b55
+      internalID: -1473029344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Photo 18-08-2024, 18 16 59_19
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 1229
+        width: 179
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fce0041d263a1e4686675b1bbb02eb5
+      internalID: 1853482822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Photo 18-08-2024, 18 16 59_20
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 1175
+        width: 226
+        height: 274
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 843f0ef91d240504184a5604b9b75094
+      internalID: -251658929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Photo 18-08-2024, 18 16 59_21
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 1236
+        width: 162
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6961361390f87ee42b599481289217a9
+      internalID: -1682700601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Photo 18-08-2024, 18 16 59_22
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 1210
+        width: 154
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9759a87998526014db2a4c9850f5e892
+      internalID: -435546104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Photo 18-08-2024, 18 16 59_23
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 1175
+        width: 161
+        height: 214
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79dba932f801bc94fa245fc77a531e2e
+      internalID: -1292376680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Photo 18-08-2024, 18 16 59_24
+      rect:
+        serializedVersion: 2
+        x: 1077
+        y: 1096
+        width: 224
+        height: 306
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cff59de96c85d4c4f9d6403390d184a9
+      internalID: 811562224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Photo 18-08-2024, 18 16 59_25
+      rect:
+        serializedVersion: 2
+        x: 1327
+        y: 1198
+        width: 179
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75444017c325c5d4d9c485880c5452c4
+      internalID: 1045792702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Photo 18-08-2024, 18 16 59_26
+      rect:
+        serializedVersion: 2
+        x: 1517
+        y: 1150
+        width: 140
+        height: 215
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b5675ed621ad40499996a1e3ef84487
+      internalID: -73090441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Photo 18-08-2024, 18 16 59_27
+      rect:
+        serializedVersion: 2
+        x: 1749
+        y: 1132
+        width: 181
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdfa73b02139ab24da3fe00a4cf78e7d
+      internalID: -1893510672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Photo 18-08-2024, 18 16 59_28
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 835
+        width: 175
+        height: 266
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecce3e7d81e325944a0780908f78166d
+      internalID: 1401924466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Photo 18-08-2024, 18 16 59_29
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 886
+        width: 180
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24608e6463b2e6b4489f0deb3d070ac6
+      internalID: -1388210357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Photo 18-08-2024, 18 16 59_30
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 878
+        width: 190
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4810308d089cf241a03d4f31fb0917a
+      internalID: 137496055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Photo 18-08-2024, 18 16 59_31
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 804
+        width: 205
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80cc386311955c948accc1ba469a0929
+      internalID: -72265395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Photo 18-08-2024, 18 16 59_32
+      rect:
+        serializedVersion: 2
+        x: 1213
+        y: 823
+        width: 201
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89dbc1e984629394082f8678c133b825
+      internalID: -889974804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Photo 18-08-2024, 18 16 59_33
+      rect:
+        serializedVersion: 2
+        x: 1523
+        y: 809
+        width: 212
+        height: 284
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef4593abacb336440bdf5ce97e37713c
+      internalID: -704577541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Photo 18-08-2024, 18 16 59_34
+      rect:
+        serializedVersion: 2
+        x: 1780
+        y: 838
+        width: 168
+        height: 214
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d06befdd1a0d244ca87a366b5f8928f
+      internalID: 1024677530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Photo 18-08-2024, 18 16 59_35
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 460
+        width: 225
+        height: 354
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c23e03dbe3fb52f479999700cefb95d8
+      internalID: -735215803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Photo 18-08-2024, 18 16 59_36
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 484
+        width: 219
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ec7e65bc0b4eab4a9106f64a87214c2
+      internalID: -636906239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Photo 18-08-2024, 18 16 59_37
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 553
+        width: 196
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a68b58ad87087084f983a795b3646249
+      internalID: -1567858734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Photo 18-08-2024, 18 16 59_38
+      rect:
+        serializedVersion: 2
+        x: 941
+        y: 528
+        width: 232
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b1dc2fad001448459b64ed3772a13ac
+      internalID: 215869974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Photo 18-08-2024, 18 16 59_39
+      rect:
+        serializedVersion: 2
+        x: 1171
+        y: 655
+        width: 167
+        height: 137
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a564a48ee03a43d46b0abfe67be0a7a5
+      internalID: -82314203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Photo 18-08-2024, 18 16 59_40
+      rect:
+        serializedVersion: 2
+        x: 1809
+        y: 667
+        width: 220
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ccfb8be916979e4b802d4172f852c39
+      internalID: -1264355260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Photo 18-08-2024, 18 16 59_0: 541889773
+      Photo 18-08-2024, 18 16 59_1: 114981843
+      Photo 18-08-2024, 18 16 59_10: -89331840
+      Photo 18-08-2024, 18 16 59_11: -313155443
+      Photo 18-08-2024, 18 16 59_12: -1088953743
+      Photo 18-08-2024, 18 16 59_13: 1668349046
+      Photo 18-08-2024, 18 16 59_14: -1105199945
+      Photo 18-08-2024, 18 16 59_15: 1201724513
+      Photo 18-08-2024, 18 16 59_16: -1347941677
+      Photo 18-08-2024, 18 16 59_17: -1218002302
+      Photo 18-08-2024, 18 16 59_18: -1473029344
+      Photo 18-08-2024, 18 16 59_19: 1853482822
+      Photo 18-08-2024, 18 16 59_2: 1207367333
+      Photo 18-08-2024, 18 16 59_20: -251658929
+      Photo 18-08-2024, 18 16 59_21: -1682700601
+      Photo 18-08-2024, 18 16 59_22: -435546104
+      Photo 18-08-2024, 18 16 59_23: -1292376680
+      Photo 18-08-2024, 18 16 59_24: 811562224
+      Photo 18-08-2024, 18 16 59_25: 1045792702
+      Photo 18-08-2024, 18 16 59_26: -73090441
+      Photo 18-08-2024, 18 16 59_27: -1893510672
+      Photo 18-08-2024, 18 16 59_28: 1401924466
+      Photo 18-08-2024, 18 16 59_29: -1388210357
+      Photo 18-08-2024, 18 16 59_3: 1700153459
+      Photo 18-08-2024, 18 16 59_30: 137496055
+      Photo 18-08-2024, 18 16 59_31: -72265395
+      Photo 18-08-2024, 18 16 59_32: -889974804
+      Photo 18-08-2024, 18 16 59_33: -704577541
+      Photo 18-08-2024, 18 16 59_34: 1024677530
+      Photo 18-08-2024, 18 16 59_35: -735215803
+      Photo 18-08-2024, 18 16 59_36: -636906239
+      Photo 18-08-2024, 18 16 59_37: -1567858734
+      Photo 18-08-2024, 18 16 59_38: 215869974
+      Photo 18-08-2024, 18 16 59_39: -82314203
+      Photo 18-08-2024, 18 16 59_4: -1134532229
+      Photo 18-08-2024, 18 16 59_40: -1264355260
+      Photo 18-08-2024, 18 16 59_5: -671182168
+      Photo 18-08-2024, 18 16 59_6: 2140025164
+      Photo 18-08-2024, 18 16 59_7: -2017132177
+      Photo 18-08-2024, 18 16 59_8: 1036566280
+      Photo 18-08-2024, 18 16 59_9: -1539341739
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
