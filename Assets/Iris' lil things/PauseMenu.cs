@@ -75,6 +75,7 @@ public class PauseMenu : MonoBehaviour
 
     void Victory()
     {
+        //GameSceneStuff.SetActive(false);
         VictoryScreenUI.SetActive(true);
     }
     
