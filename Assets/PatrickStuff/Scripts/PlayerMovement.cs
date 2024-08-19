@@ -4,9 +4,14 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
 using UnityEngine.Tilemaps;
+using UnityEngine.UIElements;
 
 public class PlayerMovement : MonoBehaviour
 {
+    //Reset values
+    private Vector3 spawnPosition;
+    private Vector3 spawnSize;
+
     //Input
     private PlayerControls playerInputSystem;
 
@@ -43,12 +48,19 @@ public class PlayerMovement : MonoBehaviour
     private float verAccRate;
     private float verDecRate;
 
+    //Managers
+    [SerializeField]
+    private FireManager fireManager;
+
     //Debug
     private Vector3 gizmoBox = Vector3.zero;
 
     // Start is called before the first frame update
     void Start()
     {
+        spawnPosition = transform.position;
+        spawnSize = transform.localScale;
+
         playerInputSystem = new PlayerControls();
 
         rb = GetComponent<Rigidbody2D>();
@@ -144,6 +156,8 @@ public class PlayerMovement : MonoBehaviour
 
                         if (ReduceSize())
                         {
+                            Vector3 fireSpawn = currentTile + new Vector3(0.5f, 0.6f, 0.0f);
+                            fireManager.SpawnFire(fireSpawn);
                             ashMap.SetTile(currentTile, flameTile);
                         }
                         return;
@@ -180,6 +194,19 @@ public class PlayerMovement : MonoBehaviour
                                       transform.localScale.z);
 
         transform.localScale = newSize;
+    }
+
+    public void CheckpointSave(Vector3 newSpawnPosition, Vector3 newSpawnSize)
+    {
+        spawnPosition = newSpawnPosition;
+        spawnSize = newSpawnSize;
+    }
+
+    public void ResetPlayer()
+    {
+        ashMap.ClearAllTiles();
+        transform.position = spawnPosition;
+        transform.localScale = spawnSize;
     }
 
     #region Input
@@ -225,7 +252,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnResetPerformed(InputAction.CallbackContext callback)
     {
-        Debug.Log("Reset");
+        ResetPlayer();
+        fireManager.ResetFires();
     }
 
     #endregion

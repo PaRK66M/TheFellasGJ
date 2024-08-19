@@ -12,9 +12,13 @@ public class BurnableRopes : MonoBehaviour
 
     private HingeJoint2D joint;
 
+    private GameManager gameManager;
+
     // Start is called before the first frame update
     void Start()
     {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+
         onFire = false;
         if (hasJoint)
         {
@@ -42,6 +46,8 @@ public class BurnableRopes : MonoBehaviour
                 {
                     joint.enabled = false;
                 }
+
+                gameManager.AddRopeObject(this);
             }
             
         }
@@ -55,5 +61,16 @@ public class BurnableRopes : MonoBehaviour
     public void RemoveFireImage()
     {
 
+    }
+
+    public void ResetRope()
+    {
+        onFire = false;
+        gameObject.layer = 7;
+        RemoveFireImage();
+        if (hasJoint)
+        {
+            joint.enabled = true;
+        }
     }
 }
