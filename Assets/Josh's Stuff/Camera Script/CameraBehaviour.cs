@@ -22,8 +22,6 @@ public class CameraBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-
         if (beginLerp)
         {
             if (timeElapased < lerpDuration)
@@ -77,6 +75,6 @@ public class CameraBehaviour : MonoBehaviour
         float frustrumHeight = 2f*camera.transform.position.z * Mathf.Tan(Mathf.Deg2Rad*(camera.fieldOfView * 0.5f));
         float frustrumWidth = frustrumHeight * camera.aspect;
 
-        return new Vector2(frustrumWidth, frustrumHeight);
+        return new Vector2(frustrumWidth + 3.1f, frustrumHeight);
     }
 }
