@@ -45,7 +45,7 @@ public class flammable : MonoBehaviour
                     TrackerObj.GetComponent<TrackerScript>().CountUp();
                     Debug.Log("Im on FIREEE!");
 
-                    collision.gameObject.GetComponent<PlayerMovement>().EnlargeSize();
+                    collision.gameObject.GetComponent<PlayerMovement>().EnlargeSize(fuelIncrease);
                 }
             }
         }
