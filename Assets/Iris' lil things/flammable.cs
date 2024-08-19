@@ -10,6 +10,8 @@ public class flammable : MonoBehaviour
     private bool isOnFire = false;
     private GameObject PlayerObj;
     private GameObject TrackerObj;
+    [SerializeField]
+    private float fuelIncrease;
 
 
     // Start is called before the first frame update

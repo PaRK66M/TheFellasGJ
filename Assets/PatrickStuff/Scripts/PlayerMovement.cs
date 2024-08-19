@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering;
 using UnityEngine.Tilemaps;
 
 public class PlayerMovement : MonoBehaviour
@@ -34,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
     private float movementScaleDecrease;
     private bool canMove;
     private bool canClimb;
+    private bool onSlope;
 
     private float horAccRate;
     private float horDecRate;
@@ -73,7 +75,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-
         //Vertical
         if (canClimb)
         {
@@ -115,7 +116,10 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector2(0.0f, rb.velocity.y);
         }
 
-        
+        if (onSlope)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, 0.0f);
+        }
 
         rb.AddForce(horizontalForce * Vector2.right, ForceMode2D.Force);
 
@@ -169,10 +173,10 @@ public class PlayerMovement : MonoBehaviour
         return false;
     }
 
-    public void EnlargeSize()
+    public void EnlargeSize(float sizeIncrease)
     {
-        Vector3 newSize = new Vector3(transform.localScale.x > 0.0f ? transform.localScale.x + enlargeScale : transform.localScale.x - enlargeScale,
-                                      transform.localScale.y > 0.0f ? transform.localScale.y + enlargeScale : transform.localScale.y - enlargeScale,
+        Vector3 newSize = new Vector3(transform.localScale.x > 0.0f ? transform.localScale.x + sizeIncrease : transform.localScale.x - sizeIncrease,
+                                      transform.localScale.y > 0.0f ? transform.localScale.y + sizeIncrease : transform.localScale.y - sizeIncrease,
                                       transform.localScale.z);
 
         transform.localScale = newSize;
@@ -237,6 +241,24 @@ public class PlayerMovement : MonoBehaviour
     {
         canClimb = false;
         rb.gravityScale = 1.0f;
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if(collision.gameObject.layer == 9)
+        {
+            onSlope = true;
+            rb.gravityScale = 0.0f;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == 9)
+        {
+            onSlope = false;
+            rb.gravityScale = 1.0f;
+        }
     }
 
     #endregion
