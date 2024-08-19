@@ -67,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(canClimb);
+        //Debug.Log(canClimb);
     }
 
     private void FixedUpdate()
