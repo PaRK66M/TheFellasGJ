@@ -61,6 +61,7 @@ public class flammable : MonoBehaviour
         int objectLayer = LayerMask.NameToLayer("OnFire");
         gameObject.layer = objectLayer;
         TrackerObj.GetComponent<TrackerScript>().CountUp();
+
         //Debug.Log("Im on FIREEE!");
         player.EnlargeSize(fuelIncrease);
 
