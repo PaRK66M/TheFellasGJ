@@ -44,6 +44,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Reset"",
+                    ""type"": ""Button"",
+                    ""id"": ""3ef82301-19f5-42e0-a554-7442d564b0b0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -178,6 +187,17 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""VerticalMovement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fe110df9-f9ea-4c84-90e7-b1535331e79d"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Reset"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -188,6 +208,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_PlayerMap = asset.FindActionMap("PlayerMap", throwIfNotFound: true);
         m_PlayerMap_HorizontalMovement = m_PlayerMap.FindAction("HorizontalMovement", throwIfNotFound: true);
         m_PlayerMap_VerticalMovement = m_PlayerMap.FindAction("VerticalMovement", throwIfNotFound: true);
+        m_PlayerMap_Reset = m_PlayerMap.FindAction("Reset", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -251,12 +272,14 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private List<IPlayerMapActions> m_PlayerMapActionsCallbackInterfaces = new List<IPlayerMapActions>();
     private readonly InputAction m_PlayerMap_HorizontalMovement;
     private readonly InputAction m_PlayerMap_VerticalMovement;
+    private readonly InputAction m_PlayerMap_Reset;
     public struct PlayerMapActions
     {
         private @PlayerControls m_Wrapper;
         public PlayerMapActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @HorizontalMovement => m_Wrapper.m_PlayerMap_HorizontalMovement;
         public InputAction @VerticalMovement => m_Wrapper.m_PlayerMap_VerticalMovement;
+        public InputAction @Reset => m_Wrapper.m_PlayerMap_Reset;
         public InputActionMap Get() { return m_Wrapper.m_PlayerMap; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -272,6 +295,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @VerticalMovement.started += instance.OnVerticalMovement;
             @VerticalMovement.performed += instance.OnVerticalMovement;
             @VerticalMovement.canceled += instance.OnVerticalMovement;
+            @Reset.started += instance.OnReset;
+            @Reset.performed += instance.OnReset;
+            @Reset.canceled += instance.OnReset;
         }
 
         private void UnregisterCallbacks(IPlayerMapActions instance)
@@ -282,6 +308,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @VerticalMovement.started -= instance.OnVerticalMovement;
             @VerticalMovement.performed -= instance.OnVerticalMovement;
             @VerticalMovement.canceled -= instance.OnVerticalMovement;
+            @Reset.started -= instance.OnReset;
+            @Reset.performed -= instance.OnReset;
+            @Reset.canceled -= instance.OnReset;
         }
 
         public void RemoveCallbacks(IPlayerMapActions instance)
@@ -303,5 +332,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     {
         void OnHorizontalMovement(InputAction.CallbackContext context);
         void OnVerticalMovement(InputAction.CallbackContext context);
+        void OnReset(InputAction.CallbackContext context);
     }
 }
