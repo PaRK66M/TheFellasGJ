@@ -37,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
     private float horizontalMovementInput;
     private float verticalMovementInput;
     [SerializeField] 
-    private float movementScaleDecrease;
+    public float movementScaleDecrease;
     private bool canMove;
     private bool canClimb;
     private bool onSlope;

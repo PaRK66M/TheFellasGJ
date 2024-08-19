@@ -11,7 +11,7 @@ public class flammable : MonoBehaviour
     [SerializeField]
     private bool instantFire = false;
     private GameObject PlayerObj;
-    private GameObject TrackerObj;
+    //private GameObject TrackerObj;
     [SerializeField]
     private float fuelIncrease;
 
@@ -22,7 +22,7 @@ public class flammable : MonoBehaviour
     void Start()
     {
         PlayerObj = GameObject.Find("Player");
-        TrackerObj = GameObject.Find("Tracker");
+        //TrackerObj = GameObject.Find("Tracker");
 
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
@@ -60,7 +60,7 @@ public class flammable : MonoBehaviour
         //Debug.Log("is on fire true");
         int objectLayer = LayerMask.NameToLayer("OnFire");
         gameObject.layer = objectLayer;
-        TrackerObj.GetComponent<TrackerScript>().CountUp();
+        //TrackerObj.GetComponent<TrackerScript>().CountUp();
 
         //Debug.Log("Im on FIREEE!");
         player.EnlargeSize(fuelIncrease);
