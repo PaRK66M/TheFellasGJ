@@ -186,6 +186,7 @@ public class PlayerMovement : MonoBehaviour
         playerInputSystem.PlayerMap.HorizontalMovement.canceled += OnHorizontalMovementCancelled;
         playerInputSystem.PlayerMap.VerticalMovement.performed += OnVerticalMovementPerformed;
         playerInputSystem.PlayerMap.VerticalMovement.canceled += OnVerticalMovementCancelled;
+        playerInputSystem.PlayerMap.Reset.performed += OnResetPerformed;
 
     }
 
@@ -196,6 +197,7 @@ public class PlayerMovement : MonoBehaviour
         playerInputSystem.PlayerMap.HorizontalMovement.canceled -= OnHorizontalMovementCancelled;
         playerInputSystem.PlayerMap.VerticalMovement.performed -= OnVerticalMovementPerformed;
         playerInputSystem.PlayerMap.VerticalMovement.canceled -= OnVerticalMovementCancelled;
+        playerInputSystem.PlayerMap.Reset.performed -= OnResetPerformed;
     }
 
     private void OnHorizontalMovementPerformed(InputAction.CallbackContext direction)
@@ -216,6 +218,12 @@ public class PlayerMovement : MonoBehaviour
     {
         verticalMovementInput = 0.0f;
     }
+
+    private void OnResetPerformed(InputAction.CallbackContext callback)
+    {
+        Debug.Log("Reset");
+    }
+
     #endregion
 
     #region Collisions
