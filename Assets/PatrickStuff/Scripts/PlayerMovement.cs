@@ -51,6 +51,8 @@ public class PlayerMovement : MonoBehaviour
     //Managers
     [SerializeField]
     private FireManager fireManager;
+    [SerializeField]
+    private GameManager gameManager;
 
     //Debug
     private Vector3 gizmoBox = Vector3.zero;
@@ -122,7 +124,6 @@ public class PlayerMovement : MonoBehaviour
 
         if (!canMove)
         {
-            Debug.Log("Can't move");
 
             horizontalForce = 0.0f;
             rb.velocity = new Vector2(0.0f, rb.velocity.y);
@@ -156,9 +157,10 @@ public class PlayerMovement : MonoBehaviour
 
                         if (ReduceSize())
                         {
-                            Vector3 fireSpawn = currentTile + new Vector3(0.5f, 0.6f, 0.0f);
-                            fireManager.SpawnFire(fireSpawn);
+                            Vector3 fireSpawn = currentTile + new Vector3(0.5f, 0.5f, 0.0f);
+                            fireManager.SpawnScorch(fireSpawn);
                             ashMap.SetTile(currentTile, flameTile);
+                            
                         }
                         return;
                     }
@@ -254,6 +256,7 @@ public class PlayerMovement : MonoBehaviour
     {
         ResetPlayer();
         fireManager.ResetFires();
+        gameManager.ResetLevel();
     }
 
     #endregion

@@ -12,11 +12,15 @@ public class BurnableRopes : MonoBehaviour
 
     private HingeJoint2D joint;
 
+    private SpriteRenderer spriteRenderer;
+    private FireManager fireManager;
     private GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        fireManager = GameObject.FindWithTag("BurnManager").GetComponent<FireManager>();
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
 
         onFire = false;
@@ -55,12 +59,13 @@ public class BurnableRopes : MonoBehaviour
 
     private void SetFireImage()
     {
-
+        spriteRenderer.color = Color.gray;
+        fireManager.SpawnFire(transform.position, Vector3.one);
     }
 
     public void RemoveFireImage()
     {
-
+        spriteRenderer.color = Color.white;
     }
 
     public void ResetRope()

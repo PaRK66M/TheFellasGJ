@@ -16,6 +16,8 @@ public class flammable : MonoBehaviour
     private float fuelIncrease;
 
     private GameManager gameManager;
+    private SpriteRenderer spriteRenderer;
+    private FireManager fireManager;
 
 
     // Start is called before the first frame update
@@ -24,7 +26,9 @@ public class flammable : MonoBehaviour
         PlayerObj = GameObject.Find("Player");
         TrackerObj = GameObject.Find("Tracker");
 
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        gameManager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        fireManager = GameObject.FindWithTag("BurnManager").GetComponent <FireManager>();
     }
 
     // Update is called once per frame
@@ -60,12 +64,14 @@ public class flammable : MonoBehaviour
         //Debug.Log("is on fire true");
         int objectLayer = LayerMask.NameToLayer("OnFire");
         gameObject.layer = objectLayer;
-        TrackerObj.GetComponent<TrackerScript>().CountUp();
 
         //Debug.Log("Im on FIREEE!");
         player.EnlargeSize(fuelIncrease);
 
+        spriteRenderer.color = Color.black;
+
         gameManager.AddFlammableObject(this);
+        fireManager.SpawnFire(transform.position, Vector3.one);
     }
 
     public void ResetObj()
@@ -73,5 +79,7 @@ public class flammable : MonoBehaviour
         isOnFire = false;
         int objectLayer = LayerMask.NameToLayer("NotOnFire");
         gameObject.layer = objectLayer;
+
+        spriteRenderer.color = Color.white;
     }
 }

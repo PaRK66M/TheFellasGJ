@@ -11,11 +11,15 @@ public class BurnableSlopes : MonoBehaviour
     private Vector3 startPosition;
 
     private GameManager gameManager;
+    private FireManager fireManager;
+    private SpriteRenderer spriteRenderer;
 
     // Start is called before the first frame update
     void Start()
     {
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        gameManager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
+        fireManager = GameObject.FindWithTag("BurnManager").GetComponent<FireManager>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
 
         startPosition = transform.position;
     }
@@ -46,6 +50,8 @@ public class BurnableSlopes : MonoBehaviour
         gameObject.layer = objectLayer;
         //Debug.Log("Im on FIREEE!");
         player.EnlargeSize(fuelIncrease);
+        fireManager.SpawnFire(transform.position, Vector3.one);
+        spriteRenderer.color = Color.black;
 
         gameManager.AddSlopeObject(this);
     }
@@ -56,5 +62,7 @@ public class BurnableSlopes : MonoBehaviour
         int objectLayer = LayerMask.NameToLayer("NotOnFire");
         transform.position = startPosition;
         gameObject.layer = objectLayer;
+
+        spriteRenderer.color = Color.white;
     }
 }
