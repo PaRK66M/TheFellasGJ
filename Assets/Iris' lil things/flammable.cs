@@ -8,6 +8,8 @@ public class flammable : MonoBehaviour
 {
     [SerializeField]
     private bool isOnFire = false;
+    [SerializeField]
+    private bool instantFire = false;
     private GameObject PlayerObj;
     private GameObject TrackerObj;
     [SerializeField]
@@ -36,7 +38,16 @@ public class flammable : MonoBehaviour
             Debug.Log("Collision w player");
             if (!isOnFire)
             {
-                if (PlayerObj.transform.localScale.y >= transform.localScale.y)
+                if (instantFire)
+                {
+                    isOnFire = true;
+                    Debug.Log("is on fire true");
+                    int objectLayer = LayerMask.NameToLayer("OnFire");
+                    gameObject.layer = objectLayer;
+                    TrackerObj.GetComponent<TrackerScript>().CountUp();
+                    Debug.Log("Im on FIREEE!");
+                }
+                else if (PlayerObj.transform.localScale.y >= transform.localScale.y)
                 {
                     isOnFire = true;
                     Debug.Log("is on fire true");

@@ -6,9 +6,8 @@ using UnityEngine;
 
 public class TrackerScript : MonoBehaviour
 {
-    [SerializeField]
-    private int onFireObj = 0;
-    private int totalFlammableObj = 0;
+    public int onFireObj = 0;
+    public int totalFlammableObj = 0;
 
     public GameObject[] flammableObj;
 
@@ -30,7 +29,7 @@ public class TrackerScript : MonoBehaviour
         if (totalFlammableObj <= onFireObj)
         {
             Debug.Log("Level Complete!");
-            ResetLayers();
+            //ResetLayers();
         }
     }
 
