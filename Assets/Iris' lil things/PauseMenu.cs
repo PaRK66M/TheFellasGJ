@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -15,6 +16,16 @@ public class PauseMenu : MonoBehaviour
     //[SerializeField]
     //private GameObject TrackerObj;
 
+    [SerializeField]
+    private GameObject GameSceneStuff;
+
+    [SerializeField]
+    private GameObject LoadingScreen;
+
+    void Start()
+    {
+        Resume();
+    }
     // Update is called once per frame
     void Update()
     {
@@ -67,5 +78,15 @@ public class PauseMenu : MonoBehaviour
     //    VictoryScreenUI.SetActive(true);
     //}
     //load menu
-    //quit game
+
+   
+    
+    public void LoadMenu()
+    {
+        LoadingScreen.SetActive(true);
+        //SceneManager.LoadScene("MenuScene");
+        LoadingScreen.GetComponent<LevelLoading>().LoadLevel("MenuScene");
+        GameSceneStuff.SetActive(false);
+    }
+
 }

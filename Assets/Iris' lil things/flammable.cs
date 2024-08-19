@@ -10,6 +10,7 @@ public class flammable : MonoBehaviour
     private bool isOnFire = false;
     [SerializeField]
     private bool instantFire = false;
+    [SerializeField]
     private GameObject PlayerObj;
     //private GameObject TrackerObj;
     [SerializeField]
@@ -35,7 +36,7 @@ public class flammable : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        
+        Debug.Log("collision ");
         if (collision.gameObject.name == "Player")
         {
             //Debug.Log("Collision w player");
