@@ -12,6 +12,10 @@ public class flammable : MonoBehaviour
     private bool instantFire = false;
     private GameObject PlayerObj;
     private GameObject TrackerObj;
+    [SerializeField]
+    private float fuelIncrease;
+
+    private GameManager gameManager;
 
 
     // Start is called before the first frame update
@@ -20,6 +24,7 @@ public class flammable : MonoBehaviour
         PlayerObj = GameObject.Find("Player");
         TrackerObj = GameObject.Find("Tracker");
 
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -33,30 +38,36 @@ public class flammable : MonoBehaviour
         
         if (collision.gameObject.name == "Player")
         {
-            Debug.Log("Collision w player");
+            //Debug.Log("Collision w player");
             if (!isOnFire)
             {
                 if (instantFire)
                 {
-                    isOnFire = true;
-                    Debug.Log("is on fire true");
-                    int objectLayer = LayerMask.NameToLayer("OnFire");
-                    gameObject.layer = objectLayer;
-                    TrackerObj.GetComponent<TrackerScript>().CountUp();
-                    Debug.Log("Im on FIREEE!");
+                    SetOnFire(collision.gameObject.GetComponent<PlayerMovement>());
+                    
                 }
                 else if (PlayerObj.transform.localScale.y >= transform.localScale.y)
                 {
-                    isOnFire = true;
-                    Debug.Log("is on fire true");
-                    int objectLayer = LayerMask.NameToLayer("OnFire");
-                    gameObject.layer = objectLayer;
-                    TrackerObj.GetComponent<TrackerScript>().CountUp();
-                    Debug.Log("Im on FIREEE!");
+                    SetOnFire(collision.gameObject.GetComponent<PlayerMovement>());
                 }
             }
         }
     }
+
+    private void SetOnFire(PlayerMovement player)
+    {
+        isOnFire = true;
+        //Debug.Log("is on fire true");
+        int objectLayer = LayerMask.NameToLayer("OnFire");
+        gameObject.layer = objectLayer;
+        TrackerObj.GetComponent<TrackerScript>().CountUp();
+
+        //Debug.Log("Im on FIREEE!");
+        player.EnlargeSize(fuelIncrease);
+
+        gameManager.AddFlammableObject(this);
+    }
+
     public void ResetObj()
     {
         isOnFire = false;
