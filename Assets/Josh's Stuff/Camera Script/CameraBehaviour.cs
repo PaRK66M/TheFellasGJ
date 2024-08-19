@@ -14,6 +14,8 @@ public class CameraBehaviour : MonoBehaviour
     float lerpDuration = 1f;
     float timeElapased = 0f;
 
+    public int room = 0;
+
     void Start()
     {
         camera.transform.position = new Vector3(0,0,-10);
@@ -59,6 +61,7 @@ public class CameraBehaviour : MonoBehaviour
 
         targetpos = new Vector3(camera.transform.position.x - screenSize.x, camera.transform.position.y, -10);
         beginLerp = true;
+        room -= 1;
 
     }
 
@@ -68,6 +71,8 @@ public class CameraBehaviour : MonoBehaviour
 
         targetpos = new Vector3(camera.transform.position.x + screenSize.x, camera.transform.position.y, -10);
         beginLerp = true;
+
+        room += 1;
     }
 
     Vector2 ScreenEdges()
