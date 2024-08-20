@@ -66,4 +66,17 @@ public class BurnableSlopes : MonoBehaviour
 
         spriteRenderer.color = Color.white;
     }
+
+    public void Freeze()
+    {
+        isOnFire = true;
+        int objectLayer = LayerMask.NameToLayer("NotOnFire");
+        gameObject.layer = objectLayer;
+        spriteRenderer.color = Color.white;
+    }
+
+    public void Unfreeze()
+    {
+        isOnFire = false;
+    }
 }

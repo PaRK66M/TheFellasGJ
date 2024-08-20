@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1917598756281811560}
   - component: {fileID: 6371900259559875950}
   - component: {fileID: 4399295499211982284}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: particle_flame_small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
