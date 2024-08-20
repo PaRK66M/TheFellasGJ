@@ -10,8 +10,9 @@ public class flammable : MonoBehaviour
     private bool isOnFire = false;
     [SerializeField]
     private bool instantFire = false;
+    [SerializeField]
     private GameObject PlayerObj;
-    private GameObject TrackerObj;
+    //private GameObject TrackerObj;
     [SerializeField]
     private float fuelIncrease;
 
@@ -24,7 +25,7 @@ public class flammable : MonoBehaviour
     void Start()
     {
         PlayerObj = GameObject.Find("Player");
-        TrackerObj = GameObject.Find("Tracker");
+        //TrackerObj = GameObject.Find("Tracker");
 
         gameManager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -39,7 +40,7 @@ public class flammable : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        
+        Debug.Log("collision ");
         if (collision.gameObject.name == "Player")
         {
             //Debug.Log("Collision w player");
@@ -64,6 +65,7 @@ public class flammable : MonoBehaviour
         //Debug.Log("is on fire true");
         int objectLayer = LayerMask.NameToLayer("OnFire");
         gameObject.layer = objectLayer;
+        //TrackerObj.GetComponent<TrackerScript>().CountUp();
 
         //Debug.Log("Im on FIREEE!");
         player.EnlargeSize(fuelIncrease);
