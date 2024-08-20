@@ -226,7 +226,7 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    private void DisableInput()
+    public void DisableInput()
     {
         playerInputSystem.Disable();
         playerInputSystem.PlayerMap.HorizontalMovement.performed -= OnHorizontalMovementPerformed;
