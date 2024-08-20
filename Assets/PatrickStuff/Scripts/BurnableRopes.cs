@@ -78,4 +78,16 @@ public class BurnableRopes : MonoBehaviour
             joint.enabled = true;
         }
     }
+
+    public void Freeze()
+    {
+        onFire = true;
+        gameObject.layer = 7;
+        spriteRenderer.color = Color.white;
+    }
+
+    public void Unfreeze()
+    {
+        onFire = false;
+    }
 }

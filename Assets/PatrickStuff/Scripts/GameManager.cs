@@ -13,6 +13,9 @@ public class GameManager : MonoBehaviour
     private BurnableSlopes[] slopeObjects;
     private int slopeIndex;
     private int slopeCount;
+    private FrostPotion[] frostObjects;
+    private int frostIndex;
+    private int frostCount;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +28,9 @@ public class GameManager : MonoBehaviour
 
         slopeIndex = -1;
         slopeCount = 0;
+
+        frostIndex = -1;
+        frostCount = 0;
     }
 
     // Update is called once per frame
@@ -86,6 +92,22 @@ public class GameManager : MonoBehaviour
         slopeObjects[slopeIndex] = obj;
     }
 
+    public void AddFrostObject(FrostPotion obj)
+    {
+        frostIndex++;
+        if (frostIndex >= frostCount)
+        {
+            frostCount++;
+            FrostPotion[] newArray = new FrostPotion[frostCount];
+            for (int i = 0; i < frostCount - 1; i++)
+            {
+                newArray[i] = frostObjects[i];
+            }
+            frostObjects = newArray;
+        }
+        frostObjects[frostIndex] = obj;
+    }
+
     public void ResetLevel()
     {
 
@@ -106,6 +128,12 @@ public class GameManager : MonoBehaviour
             slopeObjects[i].ResetObj();
         }
         slopeIndex = -1;
+
+        for (int i = 0; i <= frostIndex; i++)
+        {
+            frostObjects[i].ResetPotion();
+        }
+        frostIndex = -1;
 
     }
 }

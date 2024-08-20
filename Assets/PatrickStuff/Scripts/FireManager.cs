@@ -126,4 +126,29 @@ public class FireManager : MonoBehaviour
             fireContainer[i].SetActive(false);
         }
     }
+
+    public void FreezeFires(int leftPosition, int rightPosition)
+    {
+        for (int i = 0; i < numberOfScorches; i++)
+        {
+            if (scorchContainer[i].activeSelf)
+            {
+                if(scorchContainer[i].transform.position.x >= leftPosition && scorchContainer[i].transform.position.x <= rightPosition)
+                {
+                    scorchContainer[i].SetActive(false);
+                }
+            }
+        }
+
+        for (int i = 0; i < numberOfFires; i++)
+        {
+            if (fireContainer[i].activeSelf)
+            {
+                if (fireContainer[i].transform.position.x >= leftPosition && fireContainer[i].transform.position.x <= rightPosition)
+                {
+                    fireContainer[i].SetActive(false);
+                }
+            }
+        }
+    }
 }
