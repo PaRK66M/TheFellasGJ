@@ -8,6 +8,8 @@ public class ShowVictory : MonoBehaviour
     private GameObject victoryScren;
     [SerializeField]
     private PlayerMovement player;
+    [SerializeField]
+    private GameObject loadingScreen;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +28,7 @@ public class ShowVictory : MonoBehaviour
         if(collision.gameObject.name == "Player")
         {
             victoryScren.SetActive(true);
+            loadingScreen.SetActive(true);
             player.DisableInput();
         }
     }

@@ -91,7 +91,6 @@ public class CameraBehaviour : MonoBehaviour
     public void MoveLeft()
     {
         room -= 1;
-        Vector2 screenSize = ScreenEdges().Abs();
 
         targetpos = GetRoomCoords(room);
         beginLerp = true;
@@ -101,7 +100,6 @@ public class CameraBehaviour : MonoBehaviour
     {
         //Console.Write("moving right");
         room += 1;
-        Vector2 screenSize = ScreenEdges().Abs();
 
         targetpos = GetRoomCoords(room);
         beginLerp = true;
@@ -113,7 +111,6 @@ public class CameraBehaviour : MonoBehaviour
     public void MoveUp()
     {
         room += 1;
-        Vector2 screenSize = ScreenEdges().Abs();
 
         targetpos = GetRoomCoords(room);
         beginLerp = true;
@@ -124,7 +121,6 @@ public class CameraBehaviour : MonoBehaviour
     public void MoveDown()
     {
         room -= 1;
-        Vector2 screenSize = ScreenEdges().Abs();
 
         targetpos = GetRoomCoords(room);
         beginLerp = true;

@@ -54,8 +54,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private GameManager gameManager;
 
-    //Debug
-    private Vector3 gizmoBox = Vector3.zero;
 
     // Start is called before the first frame update
     void Start()
@@ -144,7 +142,6 @@ public class PlayerMovement : MonoBehaviour
         {
             Vector3Int currentTile = new Vector3Int(Mathf.FloorToInt(frontStep.position.x), Mathf.FloorToInt(frontStep.position.y - 0.1f), 0);
 
-            gizmoBox = currentTile; //Gizmo Debug
 
             if(currentTile != lastTilePosition)
             {
@@ -297,12 +294,4 @@ public class PlayerMovement : MonoBehaviour
 
     #endregion
 
-    #region Gizmos
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawCube(new Vector3(gizmoBox.x + 0.5f, gizmoBox.y + 0.5f, 0.0f), Vector3.one);
-    }
-
-    #endregion
 }

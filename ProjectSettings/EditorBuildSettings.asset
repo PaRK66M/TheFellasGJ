@@ -17,8 +17,8 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Iris' lil things/iris test.unity
     guid: a0e90e995016d7647a78a609324c23d6
-  - enabled: 1
-    path: Assets/Josh's Stuff/Scenes/LevelTemp.unity
+  - enabled: 0
+    path: Assets/Josh's Stuff/Scenes/LevelOne.unity
     guid: f96db1b6564e72240ad51a48bede8f1c
   - enabled: 1
     path: Assets/Levels/Level1.unity
