@@ -63,5 +63,6 @@ public class FrostPotion : MonoBehaviour
         GetComponent<SpriteRenderer>().enabled = true;
 
         transform.position = startPosition;
+        isBroken = false;
     }
 }

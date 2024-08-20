@@ -8,11 +8,14 @@ public class BurnableSlopes : MonoBehaviour
     [SerializeField]
     private float fuelIncrease;
 
-    private Vector3 startPosition;
+    private Transform startPosition;
 
     private GameManager gameManager;
     private FireManager fireManager;
     private SpriteRenderer spriteRenderer;
+
+    private HingeJoint2D hingeJoint;
+    public bool hasHingeJoint;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +24,10 @@ public class BurnableSlopes : MonoBehaviour
         fireManager = GameObject.FindWithTag("BurnManager").GetComponent<FireManager>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
-        startPosition = transform.position;
+        startPosition = transform;
+
+        if (hasHingeJoint)
+            hingeJoint = GetComponent<HingeJoint2D>();
     }
 
     // Update is called once per frame
@@ -53,18 +59,23 @@ public class BurnableSlopes : MonoBehaviour
         player.EnlargeSize(fuelIncrease);
         fireManager.SpawnFire(transform.position, Vector3.one);
         spriteRenderer.color = Color.black;
-
         gameManager.AddSlopeObject(this);
+
     }
 
     public void ResetObj()
     {
+        if (hasHingeJoint)
+            hingeJoint.enabled = false;
         isOnFire = false;
         int objectLayer = LayerMask.NameToLayer("NotOnFire");
-        transform.position = startPosition;
+        transform.position = startPosition.position;
+        transform.rotation = startPosition.rotation;
         gameObject.layer = objectLayer;
 
         spriteRenderer.color = Color.white;
+        if (hasHingeJoint)
+            hingeJoint.enabled = true;
     }
 
     public void Freeze()
