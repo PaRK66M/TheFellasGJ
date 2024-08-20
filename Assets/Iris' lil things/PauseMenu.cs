@@ -83,6 +83,8 @@ public class PauseMenu : MonoBehaviour
     
     public void LoadMenu()
     {
+        PauseMenuUI.SetActive(false);
+        OptionMenuUI.SetActive(false);
         LoadingScreen.SetActive(true);
         //SceneManager.LoadScene("MenuScene");
         LoadingScreen.GetComponent<LevelLoading>().LoadLevel("MenuScene");
