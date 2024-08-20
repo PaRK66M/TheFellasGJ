@@ -14,7 +14,8 @@ public class CameraBehaviour : MonoBehaviour
     float lerpDuration = 1f;
     float timeElapased = 0f;
 
-    public int room = 0;
+    public int roomx = 0;
+    public int roomy = 0;
 
     void Start()
     {
@@ -52,6 +53,14 @@ public class CameraBehaviour : MonoBehaviour
             {
                 MoveRight();
             }
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                MoveUp();
+            }
+            if (Input.GetKeyDown(KeyCode.S))
+            {
+                MoveDown();
+            }
         }
     }
 
@@ -61,7 +70,7 @@ public class CameraBehaviour : MonoBehaviour
 
         targetpos = new Vector3(camera.transform.position.x - screenSize.x, camera.transform.position.y, -10);
         beginLerp = true;
-        room -= 1;
+        roomx -= 1;
 
     }
 
@@ -72,7 +81,27 @@ public class CameraBehaviour : MonoBehaviour
         targetpos = new Vector3(camera.transform.position.x + screenSize.x, camera.transform.position.y, -10);
         beginLerp = true;
 
-        room += 1;
+        roomx += 1;
+    }
+
+    void MoveUp()
+    {
+        Vector2 screenSize = ScreenEdges().Abs();
+
+        targetpos = new Vector3(camera.transform.position.x, camera.transform.position.y + screenSize.y, -10);
+        beginLerp = true;
+
+        roomy += 1;
+    }
+
+    void MoveDown()
+    {
+        Vector2 screenSize = ScreenEdges().Abs();
+
+        targetpos = new Vector3(camera.transform.position.x, camera.transform.position.y - screenSize.y, -10);
+        beginLerp = true;
+
+        roomy -= 1;
     }
 
     Vector2 ScreenEdges()
@@ -80,6 +109,6 @@ public class CameraBehaviour : MonoBehaviour
         float frustrumHeight = 2f*camera.transform.position.z * Mathf.Tan(Mathf.Deg2Rad*(camera.fieldOfView * 0.5f));
         float frustrumWidth = frustrumHeight * camera.aspect;
 
-        return new Vector2(frustrumWidth + 3.1f, frustrumHeight);
+        return new Vector2(frustrumWidth + 3.3f, frustrumHeight + 1.6f);
     }
 }
