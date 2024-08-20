@@ -150,7 +150,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 lastTilePosition = currentTile;
 
-                Debug.Log(currentTile);
+                //Debug.Log(currentTile);
 
                 if (groundMap.HasTile(currentTile))
                 {

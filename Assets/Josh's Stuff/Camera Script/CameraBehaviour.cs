@@ -1,6 +1,9 @@
 
+using System;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Scripting.APIUpdating;
+using UnityEngine.VFX;
 
 public class CameraBehaviour : MonoBehaviour
 {
@@ -14,17 +17,30 @@ public class CameraBehaviour : MonoBehaviour
     float lerpDuration = 1f;
     float timeElapased = 0f;
 
-    public int roomx = 0;
-    public int roomy = 0;
+    public int room = 1;
+    
+    Vector3 room1 = new Vector3(-399.4f, -191f, -10f);
+    Vector3 room2 = new Vector3(-378.4f, -191f, -10f);
+    Vector3 room3 = new Vector3(-357.5f, -191f, -10f);
+    Vector3 room4 = new Vector3(-335.5f, -191f, -10f);
+    Vector3 room5 = new Vector3(-315.5f, -191f, -10f);
+    Vector3 room6 = new Vector3(-294.5f, -191f, -10f);
+    Vector3 room7 = new Vector3(-273.4f, -191f, -10f);
+    Vector3 room8 = new Vector3(-273.4f, -181f, -10f);
+
+    public int targetroom = 1;
 
     void Start()
     {
-        camera.transform.position = new Vector3(0,0,-10);
+        camera.transform.position = room1;
+        startpos = room1;
+        targetpos = room1;
     }
 
     // Update is called once per frame
     void Update()
     {
+        //Debug.Log("cam updating");
         if (beginLerp)
         {
             if (timeElapased < lerpDuration)
@@ -44,64 +60,128 @@ public class CameraBehaviour : MonoBehaviour
         }
         else
         {
+            //Debug.Log("cam checking for input");
             //dont check to see if we can move the camera if we are currently in the process of moving it
-            if (Input.GetKeyDown(KeyCode.A))
+            if (targetroom > room)
             {
-                MoveLeft();
+                //Debug.Log("targetroom big");
+                if (targetroom < 8)
+                {
+                    MoveRight();
+                }
+                if (targetroom == 8)
+                {
+                    MoveUp();
+                }
             }
-            if (Input.GetKeyDown(KeyCode.D))
+            if (targetroom < room)
             {
-                MoveRight();
-            }
-            if (Input.GetKeyDown(KeyCode.W))
-            {
-                MoveUp();
-            }
-            if (Input.GetKeyDown(KeyCode.S))
-            {
-                MoveDown();
+                if (room < 8)
+                {
+                    MoveLeft();
+                }
+                if (room == 8)
+                {
+                    MoveDown();
+                }
             }
         }
     }
 
-    void MoveLeft()
+    public void MoveLeft()
     {
+        room -= 1;
         Vector2 screenSize = ScreenEdges().Abs();
 
-        targetpos = new Vector3(camera.transform.position.x - screenSize.x, camera.transform.position.y, -10);
+        targetpos = GetRoomCoords(room);
         beginLerp = true;
-        roomx -= 1;
-
     }
 
-    void MoveRight()
+    public void MoveRight()
     {
+        //Console.Write("moving right");
+        room += 1;
         Vector2 screenSize = ScreenEdges().Abs();
 
-        targetpos = new Vector3(camera.transform.position.x + screenSize.x, camera.transform.position.y, -10);
+        targetpos = GetRoomCoords(room);
         beginLerp = true;
 
-        roomx += 1;
+
+        
     }
 
-    void MoveUp()
+    public void MoveUp()
     {
+        room += 1;
         Vector2 screenSize = ScreenEdges().Abs();
 
-        targetpos = new Vector3(camera.transform.position.x, camera.transform.position.y + screenSize.y, -10);
+        targetpos = GetRoomCoords(room);
         beginLerp = true;
 
-        roomy += 1;
+        
     }
 
-    void MoveDown()
+    public void MoveDown()
     {
+        room -= 1;
         Vector2 screenSize = ScreenEdges().Abs();
 
-        targetpos = new Vector3(camera.transform.position.x, camera.transform.position.y - screenSize.y, -10);
+        targetpos = GetRoomCoords(room);
         beginLerp = true;
 
-        roomy -= 1;
+        
+    }
+
+    Vector3 GetRoomCoords(int room)
+    {
+        switch (room)
+        {
+            case 1:
+            {
+                return room1;
+                break;
+            }
+            case 2:
+            {
+                return room2;
+                break;
+            }
+            case 3:
+            {
+                return room3;
+                break;
+            }
+            case 4:
+            {
+                return room4;
+                break;
+            }
+            case 5:
+            {
+                return room5;
+                break;
+            }
+            case 6:
+            {
+                return room6;
+                break;
+            }
+            case 7:
+            {
+                return room7;
+                break;
+            }
+            case 8:
+            {
+                return room8;
+                break;
+            }
+            default:
+            {
+                return room1;
+                break;
+            }
+        }
     }
 
     Vector2 ScreenEdges()
