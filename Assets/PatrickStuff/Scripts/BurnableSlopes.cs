@@ -38,6 +38,7 @@ public class BurnableSlopes : MonoBehaviour
             if (!isOnFire)
             {
                 isOnFire = true;
+                SetOnFire(collision.gameObject.GetComponent<PlayerMovement>());
             }
         }
     }

@@ -291,12 +291,13 @@ MonoBehaviour:
   enlargeScale: 0.8
   groundMap: {fileID: 0}
   ashMap: {fileID: 0}
-  flameTile: {fileID: 11400000, guid: 4f59f14955baaec4092a206666d0245d, type: 2}
+  flameTile: {fileID: 11400000, guid: 24fd135661b20684abeaee09945de21c, type: 2}
   frontStep: {fileID: 7615464847849471302}
   speed: 10
   verticalSpeed: 5
   movementScaleDecrease: 0.1
   fireManager: {fileID: 0}
+  gameManager: {fileID: 0}
 --- !u!1 &4716759197290787691
 GameObject:
   m_ObjectHideFlags: 0

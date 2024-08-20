@@ -40,7 +40,6 @@ public class flammable : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("collision ");
         if (collision.gameObject.name == "Player")
         {
             //Debug.Log("Collision w player");

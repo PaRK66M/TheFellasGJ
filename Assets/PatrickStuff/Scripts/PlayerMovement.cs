@@ -150,13 +150,17 @@ public class PlayerMovement : MonoBehaviour
             {
                 lastTilePosition = currentTile;
 
+                Debug.Log(currentTile);
+
                 if (groundMap.HasTile(currentTile))
                 {
+
                     if (ashMap.GetTile(currentTile) != flameTile)
                     {
 
                         if (ReduceSize())
                         {
+
                             Vector3 fireSpawn = currentTile + new Vector3(0.5f, 0.5f, 0.0f);
                             fireManager.SpawnScorch(fireSpawn);
                             ashMap.SetTile(currentTile, flameTile);
